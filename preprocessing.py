@@ -92,4 +92,5 @@ for doc_id in issue_ids:
         fh.write(body)
 
 md_res = pd.DataFrame(md_res)
+md_res.to_pickle('./db.pkl')
 print(md_res)
