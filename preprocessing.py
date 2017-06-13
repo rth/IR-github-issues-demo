@@ -13,12 +13,9 @@ import re
 import numpy as np
 
 
-DATA_DIR = '../scikit-learn_scikit-learn/issue/'
+DATA_DIR = './scikit-learn_scikit-learn/issue/'
 
 OUT_DIR = './data/'
-
-fname = os.path.join(DATA_DIR, '1000')
-
 
 def parse_issue(file_path):
     """ Parse files saved by github-backup 
@@ -63,7 +60,8 @@ def parse_issue(file_path):
     return md
 
 
-parse_issue(fname)
+if not os.path.exists(OUT_DIR):
+    os.mkdir(OUT_DIR)
 
 file_name = [os.path.split(fname)[1] for fname in
              glob(os.path.join(DATA_DIR, '*'))]
